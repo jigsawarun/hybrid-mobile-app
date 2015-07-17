@@ -6,6 +6,7 @@
     </description>
     <author email="kaksyscom@gmail.com" href="http://phonegap.com">
         TCS POC Team
+        
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
