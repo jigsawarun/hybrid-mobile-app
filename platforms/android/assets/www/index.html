@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
 <html>
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
 
 * {margin: 0;padding: 0}
 header, #header {
-	background-color:#333;background-color:rgba(33, 33, 33, 0.9);color:#ffffff;display:block;position:relative; padding: 2px 0; font-size:1.0em
+	background-color:#333;background-color:rgba(33, 33, 33, 0.9);color:#ffffff;display:block;position:relative; padding: 10px 0; font-size:1.2em
 }
 html, body {height:100%; }
 body {
@@ -30,56 +32,134 @@ body {
   text-shadow: 1px 1px 5px #fff
 }
 
-.mainContent{
-  width:90%;
-  height:60%;
-  margin:20px auto; 
-   float: left;
+.redbubble{
+	border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    left:80px;
+    top:230px;
+    opacity:0.9;
+    
+
+  background: -webkit-gradient(radial, 60% 40%, 0, 60% 40%, 100, from(white), to(red));
+  background: -webkit-radial-gradient(70% 30%, closest-corner, white, red);
+  background: -moz-radial-gradient(70% 30%, closest-corner, white, red);
+  background: -ms-radial-gradient(70% 30%, closest-corner, white, red);
+    
+        
+   -webkit-animation-name: redbubbleframe; /* Chrome, Safari, Opera */
+   -webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+   -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    animation-name: redbubbleframe;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
-.navigationContent{
-  width:90%;
-  height:10%;
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes redbubbleframe {
+    0%   {background-color:red; left:80px; top:230px;}
+    50%  {background-color:red; left:60px; top:230px;transform:scale(.9)}
+    100% {background-color:red; left:80px; top:230px;}
+}
+
+/* Standard syntax */
+@keyframes redbubbleframe {
+    0%   {background-color:red; left:80px; top:230px;}
+    50%  {background-color:red; left:60px; top:230px;transform:scale(.9)}
+    100% {background-color:red; left:80px; top:230px;}
+}
+
+.bluebubble{
+	border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    left:210px;
+    top:230px;
+      background: -webkit-gradient(radial, 60% 40%, 0, 60% 40%, 100, from(white), to(blue));
+  background: -webkit-radial-gradient(70% 30%, closest-corner, white, blue);
+  background: -moz-radial-gradient(70% 30%, closest-corner, white, blue);
+  background: -ms-radial-gradient(70% 30%, closest-corner, white, blue);
+}
+
+.greenbubble{
+	border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: absolute;
+    left:80px;
+    top:340px;
+       background: -webkit-gradient(radial, 60% 40%, 0, 60% 40%, 100, from(white), to(green));
+  background: -webkit-radial-gradient(70% 30%, closest-corner, white, green);
+  background: -moz-radial-gradient(70% 30%, closest-corner, white, green);
+  background: -ms-radial-gradient(70% 30%, closest-corner, white, green);
+}
+
+.orangebubble{
+	border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: absolute;
+    left:210px;
+    top:340px;
+       background: -webkit-gradient(radial, 60% 40%, 0, 60% 40%, 100, from(white), to(orange));
+  background: -webkit-radial-gradient(70% 30%, closest-corner, white, orange);
+  background: -moz-radial-gradient(70% 30%, closest-corner, white, orange);
+  background: -ms-radial-gradient(70% 30%, closest-corner, white, orange);
+}
+
+.yellowbubble{
+	border-radius: 70px;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: absolute;
+    left:140px;
+    top:290px;
+       background: -webkit-gradient(radial, 60% 40%, 0, 60% 40%, 100, from(white), to(yellow));
+  background: -webkit-radial-gradient(70% 30%, closest-corner, white, yellow);
+  background: -moz-radial-gradient(70% 30%, closest-corner, white, yellow);
+  background: -ms-radial-gradient(70% 30%, closest-corner, white, yellow);
+     -webkit-animation-name: yellowbubbleframe; /* Chrome, Safari, Opera */
+   -webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+   -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    animation-name: yellowbubbleframe;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes yellowbubbleframe {
+    0%   {left:140px; top:290px;}
+    50%  { left:140px; top:290px;transform:scale(.9)}
+    100% {left:140px; top:290px;}
+}
+
+/* Standard syntax */
+@keyframes yellowbubbleframe {
+    0%   { left:140px; top:290px;}
+    50%  { left:140px; top:290px;transform:scale(.9)}
+    100% {left:140px; top:290px;}
 }
 
 </style>
+</head>
+
 <body>
-
-<script src="js/jquery/jquery-1.11.3.min.js"></script>
-<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
-
-<script src="js/app/common.js"></script>
-<script src="js/app/points.js"></script>
-
-<script>
-
-
-</script>
-
-
-<div data-role="page" id="pageone">
-  <div data-role="header">
-    <h1>Hybrid Mobile App</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-   
-  </div>
-
-  <div data-role="footer">
-     <div class="navigationContent" data-role="navbar">
-		     <ul>
-		           	<li><button data-icon="home" id="notfButton">Notification</button></li>
-		       		<li><button data-icon="home" id="pointsButton">Points</button></li>
-		            <li><button data-icon="home" id="certsButton">Certs</button></li>
-		            <li><button data-icon="home" id="certsButton">Offers</button></li>
-		             <li><button data-icon="home" id="certsButton">Help</button></li>
-		        </ul>
-		</div> 
-  </div>
-    
-</div> 
+<header>
+</header>
+<div class="container">
+ <div class="redbubble"></div> 
+<div class="bluebubble"></div>
+ <div class="greenbubble"></div> 
+<div class="orangebubble"></div>
+<div class="yellowbubble"></div>
+</div>
 
 </body>
-
-
 </html>
