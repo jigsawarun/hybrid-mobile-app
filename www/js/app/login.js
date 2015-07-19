@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+console.log("test");	
 	var mockDB = openDatabase("APP_MOCK_DB","1.0","MOCK DATABASE","20000");
 	var localDB = openDatabase("APP_LOCAL_DB","1.0","LOCAL DATABASE","20000");
 
