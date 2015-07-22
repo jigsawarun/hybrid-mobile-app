@@ -26,7 +26,7 @@ $(document).ready(function(){
 	
 	function showOffers(resultSet){
 		for(var i =0; i < resultSet.length; i++){
-			$("#offersContainer").html("<div data-role='collapsible' data-collapsed='true'><h1>" + resultSet.item(i).offername +"</h1><p>" +  resultSet.item(i).offerdesc + "</p></div>" );
+			$("#offersContainer").append("<div data-role='collapsible' data-collapsed='true'><h1>" + resultSet.item(i).offername +"</h1><p>" +  resultSet.item(i).offerdesc + "</p></div>" );
 		}
 		$("#offersContainer div[data-role=collapsible]:first").attr('data-collapsed','false');
 		$("#offersContainer").trigger("create");

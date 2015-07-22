@@ -3,11 +3,7 @@
 	
 $(document).ready(function(){
 
-	
-	
 
-	$( "#appfooter" ).load( "footer.html" );
-	$("#appMenu").load("menu.html");
 	
 	$("#certsButton").click(function(){
 		window.location.href = "certs.html";

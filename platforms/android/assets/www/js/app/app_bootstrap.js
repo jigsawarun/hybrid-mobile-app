@@ -51,8 +51,12 @@ $(document).ready(function(){
 
   		// Load User Offers Table
 		mockDB.transaction(function (tx) {
-		    tx.executeSql('CREATE TABLE IF NOT EXISTS OFFERS (userid unique, accountid unique, offerid, offername, offerdesc, expirydate)');
+		    tx.executeSql('CREATE TABLE IF NOT EXISTS OFFERS (userid , accountid , offerid , offername, offerdesc, expirydate)');
    			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 111, "offer 1", "offer desc 1" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 112, "offer 2", "offer desc 2" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 113, "offer 3", "offer desc 3" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 114, "offer 4", "offer desc 4" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 115, "offer 5", "offer desc 5" , "07/30/3015")');
   			tx.executeSql('INSERT INTO OFFERS (userid, accountid,offerid, offername, offerdesc, expirydate) VALUES (2, 2, 222, "offer 2", "offer desc 2", "07/30/3015")');
   		});
 
