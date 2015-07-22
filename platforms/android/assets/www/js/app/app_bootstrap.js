@@ -6,7 +6,6 @@ $(document).ready(function(){
 	var mockDB = openDatabase("APP_MOCK_DB","1.0","MOCK DATABASE","20000");
 	var localDB = openDatabase("APP_LOCAL_DB","1.0","LOCAL DATABASE","20000");
 	
-	
 	mockDB.transaction(function (tx) {
 		    tx.executeSql('DROP TABLE USER_AUTH_DET');
 		    tx.executeSql('DROP TABLE ACCT');

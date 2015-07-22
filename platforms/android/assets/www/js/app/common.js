@@ -17,23 +17,6 @@ $(document).ready(function(){
 	$("#offersButton").click(function(){
 		window.location.href = "offers.html";
 	});
-	$("#signOut").click(function(){
-		localDB.transaction(function (tx) {
-	        tx.executeSql('SELECT * FROM USER_SESSION', [], function (tx, results) {
-	        	localDB.transaction(function (tx) {	
-	                    tx.executeSql(' DELETE FROM USER_SESSION WHERE userid = ?', [results.rows.item(0).userid], function (tx, results) {
-	                    	window.location.href = "index.html";
-	                    }, null);
-	                 });
-	        }, null);
-	     });
-	
-	});
-	
-	
-
-
-
 	
 });
 
