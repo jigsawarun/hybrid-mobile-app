@@ -5,14 +5,17 @@ $(document).ready(function(){
 
 
 	
-	$("#certsButton").click(function(){
+	$("#rewardsButton").click(function(){
 		window.location.href = "certs.html";
 	});
-	$("#notfButton").click(function(){
+	$("#alertsButton").click(function(){
 		window.location.href = "notification.html";
 	});
 	$("#homeButton").click(function(){
 		window.location.href = "home.html";
+	});
+	$("#offersButton").click(function(){
+		window.location.href = "offers.html";
 	});
 	$("#signOut").click(function(){
 		localDB.transaction(function (tx) {
