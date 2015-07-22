@@ -11,8 +11,8 @@ $(document).ready(function(){
 	$("#notfButton").click(function(){
 		window.location.href = "notification.html";
 	});
-	$("#pointsButton").click(function(){
-		window.location.href = "points.html";
+	$("#homeButton").click(function(){
+		window.location.href = "home.html";
 	});
 	$("#signOut").click(function(){
 		localDB.transaction(function (tx) {
