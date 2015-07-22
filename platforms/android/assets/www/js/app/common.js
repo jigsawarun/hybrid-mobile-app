@@ -17,6 +17,7 @@ $(document).ready(function(){
 	$("#offersButton").click(function(){
 		window.location.href = "offers.html";
 	});
+
 	
 });
 
