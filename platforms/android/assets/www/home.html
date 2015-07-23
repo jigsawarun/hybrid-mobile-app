@@ -94,11 +94,11 @@ transform:scale(0.9);
 
 
 @keyframes yellowbubbleExitframe {
-	0% { left:40px; top:130px;transform:scale(0.9)}
-    10% { left:40px; top:130px;transform:scale(1.1)}
-    20% { left:40px; top:130px;transform:scale(0.9)}
-    50% { left:110px; top:200px;transform:scale(1.1)}
-    100% { left:10px; top:200px;transform:scale(.1)}
+	0% { transform:scale(0.9)}
+    10% { transform:scale(1.1)}
+    20% { transform:scale(0.9)}
+    50% { transform:scale(1.1)}
+    100% {transform:scale(.1)}
 }
 
 
@@ -170,11 +170,16 @@ transform:scale(0.9);
 }
 
 @keyframes bluebubbleExitframe {
-	0% { left:185px; top:135px;  transform:scale(0.9)}
-    10% { left:185px; top:135px; transform:scale(1.1)}
-    20% { left:185px; top:135px; transform:scale(0.9)}
-    50% { left:110px; top:200px; transform:scale(1.1)}
-    100% { left:200px; top:200px; transform:scale(.1)}
+    100% { top:300px; transform:scale(.1)}
+}
+
+@keyframes bluebubbleSelectframe {
+	0% {  transform:scale(0.9)}
+    10% { transform:scale(1.1)}
+    20% {  transform:scale(0.9)}
+    50% {transform:scale(1.1)}
+    100% {transform:scale(1.3)}
+
 }
 .blueBubbleEnterClass{
 	animation-name: bluebubbleEnterframe;
@@ -188,6 +193,11 @@ transform:scale(0.9);
 }
 .blueBubbleExitClass{
 	animation-name: bluebubbleExitframe;
+    animation-duration: 2s;
+}
+
+.blueBubbleSelectClass{
+	animation-name: bluebubbleSelectframe;
     animation-duration: 2s;
 }
 
@@ -408,6 +418,32 @@ transform:scale(0.9);
     animation-duration: 2s;
 }
 
+
+
+@keyframes bubbleExitframe {
+    100% { top:300px; transform:scale(.1)}
+}
+
+@keyframes bubbleSelectframe {
+	0% {  transform:scale(0.9)}
+    10% { transform:scale(1.1)}
+    20% {  transform:scale(0.9)}
+    50% {left:110px; top:200px;transform:scale(1.1)}
+    100% {left:110px; top:200px;transform:scale(1.3)}
+
+}
+
+
+.bubbleExitClass{
+	animation-name: bubbleExitframe;
+    animation-duration: 2s;
+      animation-iteration-count: 1;
+}
+
+.bubbleSelectClass{
+	animation-name: bubbleSelectframe;
+    animation-duration: 2s;
+}
 #pointsValue{
     width: 50px;
     height: 15px;
@@ -480,37 +516,62 @@ $(document).ready(function(){
 	 $('.redbubble').addClass('redBubbleEnterClass');
 	 
   	setTimeout(function() { 
-		 $('.yellowbubble').addClass('yellowBubbleFloatClass');
+	/* 	 $('.yellowbubble').addClass('yellowBubbleFloatClass');
 	 	 $('.bluebubble').addClass('blueBubbleFloatClass');
 	 	 $('.greenbubble').addClass('greenBubbleFloatClass');
 	 	 $('.orangebubble').addClass('orangeBubbleFloatClass');
-	 	$('.redbubble').addClass('redBubbleFloatClass');
+	 	$('.redbubble').addClass('redBubbleFloatClass'); */
 	 }, 500);   
 	
 	
-	 $('.yellowbubble').click(function () { exitBubbles();
+	 $('.yellowbubble').click(function () { 
+		 $('.yellowbubble').addClass('bubbleSelectClass');
+	 	 $('.bluebubble').addClass('bubbleExitClass');
+	 	 $('.greenbubble').addClass('bubbleExitClass');
+	 	 $('.orangebubble').addClass('bubbleExitClass');
+	 	$('.redbubble').addClass('bubbleExitClass');
 	 	setTimeout(function() { 
 			 window.location.href = "perks.html";
 	 	 }, 2000);  
 	 });
-	 $('.bluebubble').click(function () { exitBubbles();
+	 $('.bluebubble').click(function () {
+		 $('.yellowbubble').addClass('bubbleExitClass');
+	 	 $('.bluebubble').addClass('bubbleSelectClass');
+	 	 $('.greenbubble').addClass('bubbleExitClass');
+	 	 $('.orangebubble').addClass('bubbleExitClass');
+	 	$('.redbubble').addClass('bubbleExitClass');
 	 setTimeout(function() { 
 		 window.location.href = "offers.html";
  	 }, 2000);  
 	 });
-	 $('.greenbubble').click(function () { exitBubbles();
+	 $('.greenbubble').click(function () { 
+		 $('.yellowbubble').addClass('bubbleExitClass');
+	 	 $('.bluebubble').addClass('bubbleExitClass');
+	 	 $('.greenbubble').addClass('bubbleSelectClass');
+	 	 $('.orangebubble').addClass('bubbleExitClass');
+	 	$('.redbubble').addClass('bubbleExitClass');
 	 setTimeout(function() { 
 		 window.location.href = "notification.html";
  	 }, 2000);  
 	 });
-	 $('.orangebubble').click(function () { exitBubbles();
+	 $('.orangebubble').click(function () { 
+		 $('.yellowbubble').addClass('bubbleExitClass');
+	 	 $('.bluebubble').addClass('bubbleExitClass');
+	 	 $('.greenbubble').addClass('bubbleExitClass');
+	 	 $('.orangebubble').addClass('bubbleSelectClass');
+	 	$('.redbubble').addClass('bubbleExitClass');
 	 
 	 setTimeout(function() { 
 		 window.location.href = "certs.html";
  	 }, 2000);  
 	 
 	 });
-	 $('.redbubble').click(function () { exitBubbles();
+	 $('.redbubble').click(function () { 
+		 $('.yellowbubble').addClass('bubbleExitClass');
+	 	 $('.bluebubble').addClass('bubbleExitClass');
+	 	 $('.greenbubble').addClass('bubbleExitClass');
+	 	 $('.orangebubble').addClass('bubbleExitClass');
+	 	$('.redbubble').addClass('bubbleSelectClass');
 	 setTimeout(function() { 
 		 window.location.href = "offers.html";
  	 }, 2000);  
@@ -518,7 +579,7 @@ $(document).ready(function(){
 	 
 	 function exitBubbles(){
 		 $('.yellowbubble').addClass('yellowBubbleExitClass');
-		 $('.bluebubble').addClass('blueBubbleExitClass');
+		 $('.bluebubble').addClass('blueBubbleSelectClass');
 		 $('.greenbubble').addClass('greenBubbleExitClass');
 		 $('.orangebubble').addClass('orangeBubbleExitClass');
 		 $('.redbubble').addClass('redBubbleExitClass');
@@ -526,10 +587,33 @@ $(document).ready(function(){
 	 
 	
 });
+
+function drag_start(event) 
+{
+var style = window.getComputedStyle(event.target, null);
+var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY)+ ',' + event.target.id;
+event.dataTransfer.setData("Text",str);
+} 
+
+function drop(event) 
+{
+var offset = event.dataTransfer.getData("Text").split(',');
+var dm = document.getElementById(offset[2]);
+dm.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
+dm.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
+event.preventDefault();
+return false;
+}
+
+function drag_over(event)
+{
+event.preventDefault();
+return false;
+}  
 </script>
 </head>
 
-<body>
+<body ondragover="drag_over(event)" ondrop="drop(event)">
 
 
 <div data-role="page">
@@ -542,31 +626,31 @@ $(document).ready(function(){
 
 <div id="homeContainer" data-role="collapsible-set" data-theme="e" data-content-theme="a">
 <a href="#">
-<div class="yellowbubble" id="yelloBubbble">
+<div class="yellowbubble" id="yelloBubbble"  draggable="true" ondragstart="drag_start(event)">
 
  <pre id="perksText">My Perks</pre>
 
  </div>  </a>
  <a href="#" style="color:black">
- <div class="bluebubble">
+ <div class="bluebubble" id="bluebubble" draggable="true" ondragstart="drag_start(event)">
  	<pre id="offersValue"></pre>
 	<pre id="offersText">Offers</pre>
  </div>
  </a>
   <a href="#">
- <div class="greenbubble">
+ <div class="greenbubble" id="greenbubble" draggable="true" ondragstart="drag_start(event)">
  		<pre id="notifValue"></pre>
 		<pre id="notifText">Alerts</pre>
  </div> 
  </a>
   <a href="#">
-	<div class="orangebubble">
+	<div class="orangebubble" id="orangebubble" draggable="true" ondragstart="drag_start(event)">
 		<pre id="rewardsValue"></pre>
 		<pre id="rewardsText">Rewards</pre>
 	</div> 
 	</a>
 	 <a href="#">
-	<div class="redbubble">
+	<div class="redbubble" id="redbubble" draggable="true" ondragstart="drag_start(event)">
 		<pre id="pointsValue"></pre>
 		<pre id="pointsText">Points</pre>
 	</div>
