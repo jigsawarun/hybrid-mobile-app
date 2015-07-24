@@ -508,6 +508,7 @@ transform:scale(0.9);
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 <script>
 $(document).ready(function(){
+
 	
 	 $('.yellowbubble').addClass('yellowBubbleEnterClass');
 	 $('.bluebubble').addClass('blueBubbleEnterClass');
@@ -616,7 +617,7 @@ return false;
 <body ondragover="drag_over(event)" ondrop="drop(event)">
 
 
-<div data-role="page">
+<div data-role="page" id="page1">
 <div data-role="header" data-position="fixed" data-theme="b">
 <h1>App</h1>
 <a href="settings.html" data-icon="gear" data-rel="dialog" data-transition="slidedown" class="settingsIcon"></a>
@@ -625,40 +626,31 @@ return false;
 
 
 <div id="homeContainer" data-role="collapsible-set" data-theme="e" data-content-theme="a">
-<a href="#">
 <div class="yellowbubble" id="yelloBubbble"  draggable="true" ondragstart="drag_start(event)">
 
  <pre id="perksText">My Perks</pre>
 
- </div>  </a>
- <a href="#" style="color:black">
+ </div>   
  <div class="bluebubble" id="bluebubble" draggable="true" ondragstart="drag_start(event)">
  	<pre id="offersValue"></pre>
 	<pre id="offersText">Offers</pre>
  </div>
- </a>
-  <a href="#">
  <div class="greenbubble" id="greenbubble" draggable="true" ondragstart="drag_start(event)">
  		<pre id="notifValue"></pre>
 		<pre id="notifText">Alerts</pre>
  </div> 
- </a>
-  <a href="#">
 	<div class="orangebubble" id="orangebubble" draggable="true" ondragstart="drag_start(event)">
 		<pre id="rewardsValue"></pre>
 		<pre id="rewardsText">Rewards</pre>
 	</div> 
-	</a>
-	 <a href="#">
 	<div class="redbubble" id="redbubble" draggable="true" ondragstart="drag_start(event)">
 		<pre id="pointsValue"></pre>
 		<pre id="pointsText">Points</pre>
 	</div>
-	</a>
 </div>
 
 <div data-role="footer" data-position="fixed">
-<div data-role="navbar">
+<div data-role="navbar" >
 	<ul>
 		<li><a href="#" data-icon="home" data-theme="b" id="homeButton">Home</a></li>
 		<li><a href="#" data-icon="alert" data-theme="b" id="alertsButton">Alerts</a></li>

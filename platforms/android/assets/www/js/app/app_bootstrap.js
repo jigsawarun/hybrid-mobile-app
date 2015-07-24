@@ -51,12 +51,12 @@ $(document).ready(function(){
   		// Load User Offers Table
 		mockDB.transaction(function (tx) {
 		    tx.executeSql('CREATE TABLE IF NOT EXISTS OFFERS (userid , accountid , offerid , offername, offerdesc, expirydate)');
-   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 111, "offer 1", "offer desc 1" , "07/30/3015")');
-   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 112, "offer 2", "offer desc 2" , "07/30/3015")');
-   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 113, "offer 3", "offer desc 3" , "07/30/3015")');
-   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 114, "offer 4", "offer desc 4" , "07/30/3015")');
-   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 115, "offer 5", "offer desc 5" , "07/30/3015")');
-  			tx.executeSql('INSERT INTO OFFERS (userid, accountid,offerid, offername, offerdesc, expirydate) VALUES (2, 2, 222, "offer 2", "offer desc 2", "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 111, "shop online", "shop online and get double points" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 112, "shop monday - thursday", "ear one time bonus points" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 113, "shop 1 apparel", "earn 150 bonus points" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 114, "shop 2 home", "earn 250 bonus points" , "07/30/3015")');
+   			tx.executeSql('INSERT INTO OFFERS (userid, accountid, offerid, offername, offerdesc, expirydate) VALUES (1, 1, 115, "shop for 70", "earn 300 bonus points" , "07/30/3015")');
+  			tx.executeSql('INSERT INTO OFFERS (userid, accountid,offerid, offername, offerdesc, expirydate) VALUES (2, 2, 222, "shop thrice in 4 days", "earn 500 points", "07/30/3015")');
   		});
 
   			// Load User Certs Table
