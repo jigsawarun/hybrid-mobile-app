@@ -1,49 +1,252 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-<body>
+<head>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<script src="js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/app/common.js"></script>
+</head>
+<style>
+#container {
+    background: rgba( 0, 0, 0, 0.10);
+    margin-left:auto;
+    margin-right:auto;
+    width: 200px;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #ccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+#glass {
+    background: rgba( 255, 255, 255, 0.50);
+    border: 1px solid #bbb;
+    border-top: 1px solid #eee;  
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height: 400px;
+    position: relative;
+}
+#water {
+    background-image: url("img/water.jpeg");   
+    background-position: top right;
+    position: absolute;
+    bottom: 0px;
+    width: 200px;
+    height: 400px;
+    -webkit-transition: all 3s ease-out;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    transition: all 3s ease-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
 
-<script src="js/jquery/jquery-1.11.3.min.js"></script>
-<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
-
-<script src="js/app/common.js"></script>
-<script src="js/app/points.js"></script>
-<script src="js/snow/Websnowjq.js"></script>
-
+</style>
 
 <script>
+		$(function() {
+			$(".meter > span").each(function() {
+				$(this)
+					.data("origWidth", $(this).width())
+					.width(0)
+					.animate({
+						width: $(this).data("origWidth")
+					}, 1200);
+			});
+		});
+	</script>
+	
+	<style>
+		.meter { 
+			height: 20px;  /* Can be anything */
+			position: relative;
+			margin: 60px 0 10px 0; /* Just for demo spacing */
+			background: #555;
+			-moz-border-radius: 25px;
+			-webkit-border-radius: 25px;
+			border-radius: 25px;
+			padding: 10px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		
+		.meterText { 
+			height: 1px;  /* Can be anything */
+			position: relative;
+			
+			-moz-border-radius: 25px;
+			-webkit-border-radius: 25px;
+			border-radius: 5px;
+			padding: 2px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		.meter > span {
+			display: block;
+			height: 100%;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			background-color: rgb(43,194,83);
+			background-image: -webkit-gradient(
+			  linear,
+			  left bottom,
+			  left top,
+			  color-stop(0, rgb(43,194,83)),
+			  color-stop(1, rgb(84,240,84))
+			 );
+			background-image: -moz-linear-gradient(
+			  center bottom,
+			  rgb(43,194,83) 37%,
+			  rgb(84,240,84) 69%
+			 );
+			-webkit-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			-moz-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			position: relative;
+			overflow: hidden;
+		}
+		.meter > span:after, .animate > span > span {
+			content: "";
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-image: 
+			   -webkit-gradient(linear, 0 0, 100% 100%, 
+			      color-stop(.25, rgba(255, 255, 255, .2)), 
+			      color-stop(.25, transparent), color-stop(.5, transparent), 
+			      color-stop(.5, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, transparent), to(transparent)
+			   );
+			background-image: 
+				-moz-linear-gradient(
+				  -45deg, 
+			      rgba(255, 255, 255, .2) 25%, 
+			      transparent 25%, 
+			      transparent 50%, 
+			      rgba(255, 255, 255, .2) 50%, 
+			      rgba(255, 255, 255, .2) 75%, 
+			      transparent 75%, 
+			      transparent
+			   );
+			z-index: 1;
+			-webkit-background-size: 50px 50px;
+			-moz-background-size: 50px 50px;
+			-webkit-animation: move 2s linear infinite;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			overflow: hidden;
+		}
+		
+		.animate > span:after {
+			display: none;
+		}
+		
+		@-webkit-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 50px 50px;
+		    }
+		}
+		
+		.orange > span {
+			background-color: #f1a165;
+			background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
+			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1a165),color-stop(1, #f36d0a));
+			background-image: -webkit-linear-gradient(#f1a165, #f36d0a); 
+		}
+		
+		.red > span {
+			background-color: #f0a3a3;
+			background-image: -moz-linear-gradient(top, #f0a3a3, #f42323);
+			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f0a3a3),color-stop(1, #f42323));
+			background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
+		}
+		
+		.nostripes > span > span, .nostripes > span:after {
+			-webkit-animation: none;
+			background-image: none;
+		}
+	</style>
+<body>
 
 
-</script>
-
-<div data-role="panel" id="menupanel">
-<ul>
-<li><button id="signOut">sign out</button></li>
-</ul>
+<div data-role="page">
+<div data-role="header" data-position="fixed" data-theme="b">
+<h1>Points</h1>
 </div>
-<a href="#menupanel" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini">Menu</a>
+
+<div data-role="content">
+
+<h1 style="text-align:center">Points Meter</h1>
+
+	<div class="meterText">
+	<div data-role="navbar">
+			<ul>
+		<li ><h1>0</h1></li>
+		<li style="text-align:center"><h1>2500</h1></li>
+			<li style="text-align:right"><h1>5000</h1></li>
+		</ul>
+		</div>
+		</div>
+	
+	<div class="meter">
+			
+			<span style="width: 25%"></span>
+		</div>
 
 
-<p>Points Summary :</p>
 
-
-Base Points :  <p id="basePoints"> </p>
-Bonus Points : <p id="bonusPoints"> </p>
-Total Points : <p id="totalPoints"> </p>
-
-
-<!-- <div id="appfooter"></div> -->
- <div data-role="navbar">
-        <ul>
-           	<li><button data-icon="home" id="notfButton">Notification</button></li>
-       		<li><button data-icon="home" id="pointsButton">Points</button></li>
-            <li><button data-icon="home" id="certsButton">Certs</button></li>
-        </ul>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+	<ul>
+		<li><a href="#" data-icon="home" data-theme="b" id="homeButton">Home</a></li>
+		<li><a href="#" data-icon="alert" data-theme="b" id="alertsButton">Alerts</a></li>
+		<li><a href="#" data-icon="grid" data-theme="b" id="offersButton">Offers</a></li>
+		<li><a href="#" data-icon="grid" data-theme="b" id="rewardsButton">Rewards</a></li>
+	</ul>
+</div>
+</div>
 </div>
 
-<input type="hidden" value="" name="userId" id="userId" />
-
+</div>
 </body>
-
-
 </html>
