@@ -436,13 +436,13 @@ transform:scale(0.9);
 
 .bubbleExitClass{
 	animation-name: bubbleExitframe;
-    animation-duration: 2s;
+    animation-duration: 1s;
       animation-iteration-count: 1;
 }
 
 .bubbleSelectClass{
 	animation-name: bubbleSelectframe;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 #pointsValue{
     width: 50px;
@@ -533,7 +533,7 @@ $(document).ready(function(){
 	 	$('.redbubble').addClass('bubbleExitClass');
 	 	setTimeout(function() { 
 			 window.location.href = "perks.html";
-	 	 }, 2000);  
+	 	 }, 1000);  
 	 });
 	 $('.bluebubble').click(function () {
 		 $('.yellowbubble').addClass('bubbleExitClass');
@@ -543,7 +543,7 @@ $(document).ready(function(){
 	 	$('.redbubble').addClass('bubbleExitClass');
 	 setTimeout(function() { 
 		 window.location.href = "offers.html";
- 	 }, 2000);  
+ 	 }, 1000);  
 	 });
 	 $('.greenbubble').click(function () { 
 		 $('.yellowbubble').addClass('bubbleExitClass');
@@ -553,7 +553,7 @@ $(document).ready(function(){
 	 	$('.redbubble').addClass('bubbleExitClass');
 	 setTimeout(function() { 
 		 window.location.href = "notification.html";
- 	 }, 2000);  
+ 	 }, 1000);  
 	 });
 	 $('.orangebubble').click(function () { 
 		 $('.yellowbubble').addClass('bubbleExitClass');
@@ -564,7 +564,7 @@ $(document).ready(function(){
 	 
 	 setTimeout(function() { 
 		 window.location.href = "certs.html";
- 	 }, 2000);  
+ 	 }, 1000);  
 	 
 	 });
 	 $('.redbubble').click(function () { 
@@ -574,8 +574,8 @@ $(document).ready(function(){
 	 	 $('.orangebubble').addClass('bubbleExitClass');
 	 	$('.redbubble').addClass('bubbleSelectClass');
 	 setTimeout(function() { 
-		 window.location.href = "offers.html";
- 	 }, 2000);  
+		 window.location.href = "points.html";
+ 	 }, 1000);  
 	 });
 	 
 	 function exitBubbles(){
